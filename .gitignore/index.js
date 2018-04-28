@@ -92,7 +92,7 @@ Bot.on("message" ,  message => {
 		if(command === prefixe + "kick"){
 			if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.sendMessage("Vous n'avez pas la permission d'utiliser cette commande");
 		
-			var toKick = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
+			var toKick = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 			if(!toKick) return message.channel.sendMessage("Vous n'avez pas specifié un utilisateur!");
 
 			var reasonToKick = args[1];
