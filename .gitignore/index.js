@@ -13,7 +13,7 @@ Bot.on("ready", () => {
 })
 
 
-Bot.login("NDEwMDM4NzA5ODI0NTIwMTky.DVnWJQ.3SKWHuYA8NXKYrYOeCRcddRyf-Y");
+Bot.login(process.env.TOKEN);
 
 Bot.on("guildMemberAdd", member => {
 	member.guild.channels.find("name", "general").send(":pizza: " + member.user.username + " a rejoint gangstar");
