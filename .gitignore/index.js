@@ -96,7 +96,7 @@ Bot.on("message" ,  message => {
 			if(!toKick) return message.channel.sendMessage("Vous n'avez pas specifié un utilisateur!");
 
 			var reasonToKick = args[1];
-			if(!reasonToKick) return message.channel.sendMessage("Vous n'avez pas specifié une raison!");
+			
 
 			var kick_embed = new Discord.RichEmbed()
 				.setColor("#0713BD")
