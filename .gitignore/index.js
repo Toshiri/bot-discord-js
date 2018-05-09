@@ -103,7 +103,7 @@ Bot.on("message" ,  message => {
 				.addField("Kick :", toKick + " a été kické par " + message.member + " pour " + reasonToKick)
 			message.guild.channels.find("name", "staff").sendEmbed(kick_embed);
 
-			message.guild.member(toKick).kick(reasonToKick);
+			toKick.kick(reasonToKick);
 		}
 
 		if(command === prefixe + "ban"){
