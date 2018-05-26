@@ -89,40 +89,9 @@ Bot.on("message" ,  message => {
 				message.reply("aurevoir");
 		}
 		
-		if(command === prefixe + "kick"){
-			if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.sendMessage("Vous n'avez pas la permission d'utiliser cette commande");
-		
-			var toKick = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-			if(!toKick) return message.channel.sendMessage("Vous n'avez pas specifié un utilisateur!");
-
-			var reasonToKick = args[1];
-			
-
-			var kick_embed = new Discord.RichEmbed()
-				.setColor("#0713BD")
-				.addField("Kick :", toKick + " a été kické par " + message.member + " pour " + reasonToKick)
-			message.guild.channels.find("name", "staff").sendEmbed(kick_embed);
-
-			toKick.kick(reasonToKick);
+		if(message.content === "test"){
+			message.reply("test");
 		}
-
-		if(command === prefixe + "ban"){
-			if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.sendMessage("Vous n'avez pas la permission d'utiliser cette commande");
-		
-			var toBan = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
-			if(!toBan) return message.channel.sendMessage("Vous n'avez pas specifié un utilisateur!");
-
-			var reasonToBan = args[1];
-			if(!reasonToBan) return message.channel.sendMessage("Vous n'avez pas specifié une raison!");
-
-			var ban_embed = new Discord.RichEmbed()
-				.setColor("#0713BD")
-				.addField("Bannisement :", toBan + " a été banni par " + message.member + " pour " + reasonToBan)
-			message.guild.channels.find("name", "staff").sendEmbed(ban_embed);
-			
-			message.guild.member(toBan).ban(reasonToBan);
-		}
-
 		if(command == prefixe + "staff"){
 			var staff_embed = new Discord.RichEmbed()
 				.setColor("#0713BD")
