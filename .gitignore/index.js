@@ -31,7 +31,20 @@ Bot.on("message" ,  message => {
 	var messageArray = message.content.split(" ");
 	var command = messageArray[0];
 	var args = messageArray.slice(1);
-
+		if(command === prefixe + "kick"){
+			if(!member.hasPermission("MANGE_MESSAGE")){
+				return message.channel.sendMessage("Vous n'avez pas la permission d'utiliser cette commande");
+			}
+			if(message.mentions.users.size === 0){
+				return message.channel.sendMessage("Merci de mentionner un utilisateur valide");
+			}
+			let kickMember = message.guild.member(message.mentions.user.firts());
+			if(!kickMember){
+				return message.channel.sendMessage("Cet utilisateur est inexistant");
+			}
+			
+			
+		}
 		if(message.content === prefixe + "help"){
 			var help_embed = new Discord.RichEmbed()
 				.setColor("#0713BD")
