@@ -42,7 +42,13 @@ Bot.on("message" ,  message => {
 			if(!kickMember){
 				return message.channel.sendMessage("Cet utilisateur est inexistant");
 			}
-			
+			if(!message.guild.member(Bot.user).hasPermission("KICK_MEMBERS"){
+				return message.channel.sendMessage("Je n'ai pas la permission d'expulser des membres");
+			}
+			kickMember.kick().then(member => {
+				message.channel.sendMessage(member + "A été expulsé");
+				message.guild.channels.find("name", "staff").sendMessage(member + " a été expulsé par : " + message.author.username);
+			})
 			
 		}
 		if(message.content === prefixe + "help"){
