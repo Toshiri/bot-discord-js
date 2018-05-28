@@ -32,7 +32,7 @@ Bot.on("message" ,  message => {
 	var command = messageArray[0];
 	var args = messageArray.slice(1);
 		if(command === prefixe + "kick"){
-			if(!member.hasPermission("MANAGE_MESSAGE")){
+			if(!message.member.hasPermission("MANAGE_MESSAGE")){
 				return message.channel.sendMessage("Vous n'avez pas la permission d'utiliser cette commande");
 			}
 			if(message.mentions.users.size === 0){
