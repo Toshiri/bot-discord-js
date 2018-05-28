@@ -35,21 +35,15 @@ Bot.on("message" ,  message => {
 			if(!message.member.hasPermission("MANAGE_MESSAGE")){
 				return message.channel.sendMessage("Vous n'avez pas la permission d'utiliser cette commande");
 			}
-			if(message.mentions.users.size === 0){
-				return message.channel.sendMessage("Merci de mentionner un utilisateur valide");
-			}
-			let kickMember = message.guild.member(message.mentions.user.firts());
-			if(!kickMember){
-				return message.channel.sendMessage("Cet utilisateur est inexistant");
-			}
+			let kickMember = message.guild.member(message.mentions.users.first());
 			if(!message.guild.member(Bot.user).hasPermission("KICK_MEMBERS")){
 				return message.channel.sendMessage("Je n'ai pas la permission d'expulser des membres");
 			}
 			kickMember.kick().then(member => {
 				message.channel.sendMessage(member + "A été expulsé");
-				message.guild.channels.find("name", "staff").sendMessage(member + " a été expulsé par : " + message.author.username);
+				message.guild.channels.find("name", "staff").send(member + " a été expulsé par : " + message.author.username);
 			});
-			
+		
 		};
 		if(message.content === prefixe + "help"){
 			var help_embed = new Discord.RichEmbed()
