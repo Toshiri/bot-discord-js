@@ -113,8 +113,8 @@ Bot.on("message" ,  message => {
 				.addField("Co-Fondateur :", "Mrfrifol")
 				.addField("Chef-Administrateur :", "Farcox")
 				.addField("Administrateur :", "Golden Freedy's")
-				.addField("Chef-Moderateur :", "On recrute")
-				.addField("Moderateur :", "Gaming Studio\nKizerGHD\nAlan Poireau")
+				.addField("Chef-Moderateur :", "Gaming Studio YT")
+				.addField("Moderateur :", "KizerGHD\nAlan Poireau")
 			message.channel.sendEmbed(staff_embed)
 		}
 
