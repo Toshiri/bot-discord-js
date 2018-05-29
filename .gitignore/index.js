@@ -107,7 +107,7 @@ Bot.on("message" ,  message => {
 		}
 		if(command == prefixe + "staff"){
 			var staff_embed = new Discord.RichEmbed()
-				.setColor("#0713BD")
+				.setColor("#18D731")
 				.setTitle("Voici le staff:")
 				.addField("Fondateur :", "Toshiri")
 				.addField("Co-Fondateur :", "Mrfrifol")
