@@ -41,7 +41,7 @@ Bot.on("message" ,  message => {
 			}
 			kickMember.kick().then(member => {
 				message.channel.sendMessage(member + "A été expulsé");
-				message.guild.channels.find("name", "staff").sendMessage(member + " a été expulsé par : " + message.author.username);
+				member.guild.channels.find("name", "staff").sendMessage(member + " a été expulsé par : " + message.author.username);
 			});
 		
 	};
