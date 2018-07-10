@@ -31,9 +31,6 @@ Bot.on("message" ,  message => {
 	var messageArray = message.content.split(" ");
 	var command = messageArray[0];
 	var args = messageArray.slice(1);
-	if (message.channel.name === tuileter){
-		message.react("👍");
-	}
 		if(command === prefixe + "kick"){
 			if(!message.member.hasPermission("MANAGE_MESSAGE")){
 				return message.channel.sendMessage("Vous n'avez pas la permission d'utiliser cette commande");
