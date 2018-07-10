@@ -45,6 +45,20 @@ Bot.on("message" ,  message => {
 			});
 		
 	};
+	if(command === prefixe + "ban"){
+			if(!message.member.hasPermission("MANAGE_MESSAGE")){
+				return message.channel.sendMessage("Vous n'avez pas la permission d'utiliser cette commande");
+			}
+			let banMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
+			if(!message.guild.member(Bot.user).hasPermission("BAN_MEMBERS")){
+				return message.channel.sendMessage("Je n'ai pas la permission de bannir des membres");
+			}
+			banMember.ban().then(member => {
+				message.channel.sendMessage(member + "A été banni");
+				member.guild.channels.find("name", "staff").sendMessage(member + " a été expulsé par : " + message.author.username);
+			});
+		
+	};
 		if(message.content === prefixe + "help"){
 			var help_embed = new Discord.RichEmbed()
 				.setColor("#0713BD")
