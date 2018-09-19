@@ -16,11 +16,11 @@ Bot.on("ready", () => {
 Bot.login(process.env.TOKEN);
 
 Bot.on("guildMemberAdd", member => {
-	member.guild.channels.find("name", "general").send(":pizza: " + member.user.username + " a rejoint gangstar");
+	member.guild.channels.find("name", "accueil").send(":pizza: " + member.user.username + " a rejoint gangstar");
 })
 
 Bot.on("guildMemberRemove", member => {
-	member.guild.channels.find("name", "general").send(":disappointed_relieved: " + member.user.username + " a quitté gangstar");
+	member.guild.channels.find("name", "acceuil").send(":disappointed_relieved: " + member.user.username + " a quitté gangstar");
 })
 
 
