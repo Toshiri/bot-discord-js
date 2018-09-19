@@ -124,11 +124,11 @@ Bot.on("message" ,  message => {
 				.setColor("#18D731")
 				.setTitle("Voici le staff:")
 				.addField("Fondateur :", "Toshiri")
-				.addField("Co-Fondateur :", "Mrfrifol")
-				.addField("Chef-Administrateur :", "Farcox")
-				.addField("Administrateur :", "Golden Freedy's")
-				.addField("Chef-Moderateur :", "Gaming Studio YT")
-				.addField("Moderateur :", "KizerGHD\nAlan Poireau")
+				.addField("Co-Fondateur :", "Gaming Studio YT")
+				.addField("Chef-Administrateur :", "Personne")
+				.addField("Administrateur :", "FlowShi")
+				.addField("Chef-Moderateur :", "Ashille")
+				.addField("Moderateur :", "Nous recherchon des moderateurs donc n'hesitez pas a aller dans le #model-de-candidature")
 			message.channel.sendEmbed(staff_embed)
 		}
 
