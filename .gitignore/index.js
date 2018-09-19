@@ -20,7 +20,7 @@ Bot.on("guildMemberAdd", member => {
 })
 
 Bot.on("guildMemberRemove", member => {
-	member.guild.channels.find("name", "acceuil").send(":disappointed_relieved: " + member.user.username + " a quitté gangstar");
+	member.guild.channels.find("name", "accueil").send(":disappointed_relieved: " + member.user.username + " a quitté gangstar");
 })
 
 
