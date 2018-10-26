@@ -16,8 +16,8 @@ Bot.on("ready", () => {
 Bot.login(process.env.TOKEN);
 
 Bot.on("guildMemberAdd", member => {
-	member.guild.channels.find("name", "accueil").send(":pizza: " + member.user.username + " a rejoint gangstar");
-	member.addRole("name", "Membre");
+	member.guild.channels.find("name", "accueil").send(":pizza: " + member.user.username + " a rejoint gangstar")
+	member.addRole("name", "Membre")
 })
 
 Bot.on("guildMemberRemove", member => {
